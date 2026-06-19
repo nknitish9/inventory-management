@@ -91,9 +91,9 @@ export default function Dashboard() {
                     {stats.low_stock_products.map((product) => (
                       <tr key={product.id}>
                         <td><strong>{product.name}</strong></td>
-                        <td><code>{product.sku}</code></td>
-                        <td className="money">${product.price.toFixed(2)}</td>
-                        <td>
+                        <td data-label="SKU"><code>{product.sku}</code></td>
+                        <td data-label="Price" className="money">${product.price.toFixed(2)}</td>
+                        <td data-label="Stock Level">
                           <div className="stock-bar">
                             <div
                               className="stock-bar-fill"
@@ -102,7 +102,7 @@ export default function Dashboard() {
                           </div>
                           <span className="stock-count">{product.quantity_in_stock} units</span>
                         </td>
-                        <td>
+                        <td data-label="Status">
                           <span className={`badge ${product.quantity_in_stock === 0 ? 'badge-danger' : 'badge-warning'}`}>
                             {product.quantity_in_stock === 0 ? 'Out of Stock' : 'Low Stock'}
                           </span>

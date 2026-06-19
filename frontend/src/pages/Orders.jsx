@@ -177,11 +177,11 @@ export default function Orders() {
                 {filtered.map((order) => (
                   <tr key={order.id}>
                     <td><span className="order-id">#{order.id}</span></td>
-                    <td>{order.customer_name || `Customer #${order.customer_id}`}</td>
-                    <td>{order.items?.length || 0} item{(order.items?.length || 0) !== 1 ? 's' : ''}</td>
-                    <td className="money"><strong>${order.total_amount.toFixed(2)}</strong></td>
-                    <td className="text-muted">{new Date(order.created_at).toLocaleDateString()}</td>
-                    <td className="actions">
+                    <td data-label="Customer">{order.customer_name || `Customer #${order.customer_id}`}</td>
+                    <td data-label="Items">{order.items?.length || 0} item{(order.items?.length || 0) !== 1 ? 's' : ''}</td>
+                    <td data-label="Total" className="money"><strong>${order.total_amount.toFixed(2)}</strong></td>
+                    <td data-label="Date" className="text-muted">{new Date(order.created_at).toLocaleDateString()}</td>
+                    <td data-label="Actions" className="actions">
                       <Link to={`/orders/${order.id}`} className="btn btn-ghost btn-sm">View</Link>
                       <button className="btn btn-danger btn-sm" onClick={() => handleDelete(order.id)}>Cancel</button>
                     </td>

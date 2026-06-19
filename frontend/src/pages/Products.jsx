@@ -161,9 +161,9 @@ export default function Products() {
                 {filtered.map((product) => (
                   <tr key={product.id}>
                     <td><strong>{product.name}</strong></td>
-                    <td><code>{product.sku}</code></td>
-                    <td className="money">${product.price.toFixed(2)}</td>
-                    <td>
+                    <td data-label="SKU"><code>{product.sku}</code></td>
+                    <td data-label="Price" className="money">${product.price.toFixed(2)}</td>
+                    <td data-label="Stock">
                       <span className={`badge ${
                         product.quantity_in_stock === 0
                           ? 'badge-danger'
@@ -174,7 +174,7 @@ export default function Products() {
                         {product.quantity_in_stock} units
                       </span>
                     </td>
-                    <td className="actions">
+                    <td data-label="Actions" className="actions">
                       <button className="btn btn-ghost btn-sm" onClick={() => openEditModal(product)}>Edit</button>
                       <button className="btn btn-danger btn-sm" onClick={() => handleDelete(product.id)}>Delete</button>
                     </td>

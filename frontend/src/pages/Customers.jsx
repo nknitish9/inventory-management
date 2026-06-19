@@ -149,10 +149,10 @@ export default function Customers() {
                         <strong>{customer.full_name}</strong>
                       </div>
                     </td>
-                    <td>{customer.email}</td>
-                    <td>{customer.phone}</td>
-                    <td className="text-muted">{new Date(customer.created_at).toLocaleDateString()}</td>
-                    <td className="actions">
+                    <td data-label="Email">{customer.email}</td>
+                    <td data-label="Phone">{customer.phone}</td>
+                    <td data-label="Joined" className="text-muted">{new Date(customer.created_at).toLocaleDateString()}</td>
+                    <td data-label="Actions" className="actions">
                       <button className="btn btn-danger btn-sm" onClick={() => handleDelete(customer.id)}>Delete</button>
                     </td>
                   </tr>

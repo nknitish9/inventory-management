@@ -95,9 +95,9 @@ export default function OrderDetail() {
                 {order.items.map((item) => (
                   <tr key={item.id}>
                     <td><strong>{item.product_name || `Product #${item.product_id}`}</strong></td>
-                    <td className="money">${item.unit_price.toFixed(2)}</td>
-                    <td>{item.quantity}</td>
-                    <td className="money">${item.subtotal.toFixed(2)}</td>
+                    <td data-label="Unit Price" className="money">${item.unit_price.toFixed(2)}</td>
+                    <td data-label="Qty">{item.quantity}</td>
+                    <td data-label="Subtotal" className="money">${item.subtotal.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
