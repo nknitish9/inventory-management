@@ -162,7 +162,7 @@ export default function Products() {
                   <tr key={product.id}>
                     <td><strong>{product.name}</strong></td>
                     <td data-label="SKU"><code>{product.sku}</code></td>
-                    <td data-label="Price" className="money">${product.price.toFixed(2)}</td>
+                    <td data-label="Price" className="money">₹{product.price.toFixed(2)}</td>
                     <td data-label="Stock">
                       <span className={`badge ${
                         product.quantity_in_stock === 0
@@ -216,7 +216,7 @@ export default function Products() {
           </div>
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="price">Price ($) *</label>
+              <label htmlFor="price">Price (₹) *</label>
               <input
                 id="price"
                 type="number"

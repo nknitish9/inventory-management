@@ -66,7 +66,7 @@ export default function OrderDetail() {
             </div>
             <div>
               <dt>Total Amount</dt>
-              <dd className="total-amount">${order.total_amount.toFixed(2)}</dd>
+              <dd className="total-amount">₹{order.total_amount.toFixed(2)}</dd>
             </div>
             <div>
               <dt>Line Items</dt>
@@ -95,16 +95,16 @@ export default function OrderDetail() {
                 {order.items.map((item) => (
                   <tr key={item.id}>
                     <td><strong>{item.product_name || `Product #${item.product_id}`}</strong></td>
-                    <td data-label="Unit Price" className="money">${item.unit_price.toFixed(2)}</td>
+                    <td data-label="Unit Price" className="money">₹{item.unit_price.toFixed(2)}</td>
                     <td data-label="Qty">{item.quantity}</td>
-                    <td data-label="Subtotal" className="money">${item.subtotal.toFixed(2)}</td>
+                    <td data-label="Subtotal" className="money">₹{item.subtotal.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
                 <tr>
                   <td colSpan="3"><strong>Order Total</strong></td>
-                  <td className="money"><strong>${order.total_amount.toFixed(2)}</strong></td>
+                  <td className="money"><strong>₹{order.total_amount.toFixed(2)}</strong></td>
                 </tr>
               </tfoot>
             </table>

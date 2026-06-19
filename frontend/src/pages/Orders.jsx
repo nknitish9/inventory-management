@@ -183,7 +183,7 @@ export default function Orders() {
                     <td><span className="order-id">#{order.id}</span></td>
                     <td data-label="Customer">{order.customer_name || `Customer #${order.customer_id}`}</td>
                     <td data-label="Items">{order.items?.length || 0} item{(order.items?.length || 0) !== 1 ? 's' : ''}</td>
-                    <td data-label="Total" className="money"><strong>${order.total_amount.toFixed(2)}</strong></td>
+                    <td data-label="Total" className="money"><strong>₹{order.total_amount.toFixed(2)}</strong></td>
                     <td data-label="Date" className="text-muted">{new Date(order.created_at).toLocaleDateString()}</td>
                     <td data-label="Actions" className="actions">
                       <Link to={`/orders/${order.id}`} className="btn btn-ghost btn-sm">View</Link>
@@ -235,8 +235,8 @@ export default function Orders() {
                   >
                     <option value="">Select product</option>
                     {products.map((p) => (
-                      <option key={p.id} value={p.id} title={`${p.name} — $${p.price.toFixed(2)} (Stock: ${p.quantity_in_stock})`}>
-                        {truncate(p.name, 15)}{p.name.length > 15 ? '…' : ''} (${p.price.toFixed(2)})
+                      <option key={p.id} value={p.id} title={`${p.name} — ₹${p.price.toFixed(2)} (Stock: ${p.quantity_in_stock})`}>
+                        {truncate(p.name, 15)}{p.name.length > 15 ? '…' : ''} (₹{p.price.toFixed(2)})
                       </option>
                     ))}
                   </select>
@@ -269,7 +269,7 @@ export default function Orders() {
           {estimatedTotal > 0 && (
             <div className="order-estimate">
               <span>Estimated Total</span>
-              <strong>${estimatedTotal.toFixed(2)}</strong>
+              <strong>₹{estimatedTotal.toFixed(2)}</strong>
               <span className="field-hint">Final amount calculated by server</span>
             </div>
           )}

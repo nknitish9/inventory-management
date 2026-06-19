@@ -92,7 +92,7 @@ export default function Dashboard() {
                       <tr key={product.id}>
                         <td><strong>{product.name}</strong></td>
                         <td data-label="SKU"><code>{product.sku}</code></td>
-                        <td data-label="Price" className="money">${product.price.toFixed(2)}</td>
+                        <td data-label="Price" className="money">₹{product.price.toFixed(2)}</td>
                         <td data-label="Stock Level">
                           <div className="stock-bar">
                             <div
