@@ -9,6 +9,10 @@ import { SkeletonRows } from '../components/Spinner';
 import { useToast } from '../context/ToastContext';
 import { api } from '../services/api';
 
+function truncate(str, len = 30) {
+  return str.length > len ? str.slice(0, len) + '…' : str;
+}
+
 export default function Orders() {
   const [orders, setOrders] = useState([]);
   const [customers, setCustomers] = useState([]);
@@ -231,8 +235,8 @@ export default function Orders() {
                   >
                     <option value="">Select product</option>
                     {products.map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.name} — ${p.price.toFixed(2)} (Stock: {p.quantity_in_stock})
+                      <option key={p.id} value={p.id} title={`${p.name} — $${p.price.toFixed(2)} (Stock: ${p.quantity_in_stock})`}>
+                        {truncate(p.name, 15)}{p.name.length > 15 ? '…' : ''} (${p.price.toFixed(2)})
                       </option>
                     ))}
                   </select>
