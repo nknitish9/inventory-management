@@ -176,15 +176,7 @@ docker push your-dockerhub-username/inventory-backend:latest
 2. Import project on [Vercel](https://vercel.com)
 3. Set **Root Directory** to `frontend`
 4. Add environment variable:
-   - `VITE_API_URL` — your deployed backend URL (e.g., `https://inventory-backend.onrender.com`)
-
-### Frontend — Netlify
-
-1. Import project on [Netlify](https://netlify.com)
-2. Set **Base directory** to `frontend`
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Add environment variable `VITE_API_URL`
+   - `VITE_API_URL` — your deployed backend URL (e.g., `https://inventory-management-k7xf.onrender.com`)
 
 ## Environment Variables
 
@@ -196,13 +188,6 @@ docker push your-dockerhub-username/inventory-backend:latest
 | `DATABASE_URL` | Full PostgreSQL connection string | — |
 | `CORS_ORIGINS` | Comma-separated allowed origins | `http://localhost:5173` |
 | `VITE_API_URL` | Backend API URL for frontend | `http://localhost:8000` |
-
-## Submission Checklist
-
-- [ ] GitHub repository with frontend and backend code
-- [ ] Docker Hub image for backend (`your-username/inventory-backend`)
-- [ ] Live frontend URL (Vercel/Netlify)
-- [ ] Live backend API URL (Render/Railway/Fly.io)
 
 ## License
 
